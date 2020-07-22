@@ -33,10 +33,28 @@ function showAlbums(albums) {
 
 }
 
+function addListenerFiltraGenere() {
 
+    $('#select-genere').click(filtraGenere);
+
+}
+
+function filtraGenere() {
+
+    var value = $(this).val();
+
+    if (value) {
+
+        $('#albums .item').hide();
+        $('#albums .item[data-id="' + value + '"]').show();
+    } else {
+        $('#albums .item').show();
+    }
+}
 
 function init() {
     downloadAlbums();
+    addListenerFiltraGenere();
 }
 
 

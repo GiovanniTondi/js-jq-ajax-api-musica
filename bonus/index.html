@@ -10,7 +10,7 @@
     <title>html-css-spotifyweb</title>
 
     <script id="album-template" type="text/x-handlebars-template">
-        <div class="item">
+        <div class="item" data-id="{{ genre }}">
             <div class="image">
                 <div class="layover"><i class="far fa-play-circle"></i></div>
                 <img src="{{ poster }}" alt="">
@@ -99,10 +99,10 @@
                 <label for="select-genere">Filtra per genere: </label>
                 <select class="genere" id="select-genere">
                     <option selected value="">-- Seleziona --</option>
-                    <option value="pop">Pop</option>
-                    <option value="rock">Rock</option>
-                    <option value="metal">Metal</option>
-                    <option value="jazz">Jazz</option>
+                    <option value="Pop">Pop</option>
+                    <option value="Rock">Rock</option>
+                    <option value="Metal">Metal</option>
+                    <option value="Jazz">Jazz</option>
                 </select>
                 <div id="albums" class="album"></div>
             </section>
