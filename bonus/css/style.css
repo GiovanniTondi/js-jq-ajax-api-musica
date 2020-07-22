@@ -1,0 +1,497 @@
+/* Regole generali */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.04em;
+    font-size: 16px;
+}
+
+/* main */
+.container {
+    height: 100vh;
+    width: 100%;
+}
+
+main {
+    display: flex;
+    height: calc(100% - 90px);
+}
+
+
+/* Menu laterale */
+.menu-lat  {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    padding: 0 10px;
+    min-height: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.menu-lat #logo-big {
+    margin: 20px 0;
+    height: 40px;
+}
+
+.menu-lat #logo-small {
+    display: none;
+}
+
+.menu-lat ul {
+    list-style: none;
+}
+
+.menu-lat li img {
+    height: 25px;
+    vertical-align: middle;
+}
+
+.menu-lat a {
+    display: inline-block;
+    padding: 5px 0;
+    width: 100%;
+    text-decoration: none;
+    color: #adb3b3;
+}
+
+.menu-lat .playlist {
+    margin-top: 20px;
+    font-weight: 500;
+    color: #fff;
+    height: calc(100% - 230px);
+    overflow-y: hidden;
+}
+
+.menu-lat .playlist ul {
+    height: calc(100% - 75px);
+    overflow-y: auto;
+}
+
+.menu-lat .playlist .fas {
+    padding: 5px 0;
+    padding-right: 5px;
+    font-size: 36px;
+    vertical-align: middle;
+}
+
+.menu-lat .menu-bottom .download a {
+    font-size: 12px;
+}
+
+.menu-lat .menu-bottom .download img {
+    height: 17px;
+}
+
+.menu-lat .menu-bottom .user {
+    margin: 5px 0;
+    font-weight: 500;
+    color: #fff;
+}
+
+.menu-lat .menu-bottom .user .fas {
+    font-size: 24px;
+    color: #adb3b3;
+    vertical-align: middle;
+}
+
+.menu-lat a:hover {
+    color: #fff;
+}
+
+
+/* Contenuto */
+.content {
+    padding: 100px 20px 0;
+    height: 100%;
+    width: calc(100% - 250px);
+    background-color: #121212;
+    color: #fff;
+    overflow-y: auto;
+}
+
+.content h2 {
+    margin: 5px 0 10px;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.content select {
+    margin-left: 5%;
+}
+
+.content small {
+    font-size: 12px;
+    font-weight: 500;
+    color: #777879;
+}
+
+.head-upgrade {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: calc(100% - 250px);
+    height: 90px;
+    background-color: rgba(0,0,0,.5);
+    z-index: 9;
+}
+
+.head-upgrade a {
+    text-decoration: none;
+}
+
+.head-upgrade .btn {
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 30px;
+    border: solid 1px #fff;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    color: #fff;
+}
+
+.head-upgrade .btn:hover {
+    transform: scale(105%);
+}
+
+
+/* menu-link superiore */
+.menu-link {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.menu-link ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+}
+
+.menu-link li {
+    padding: 5px 15px;
+}
+
+.menu-link a {
+    font-size: 12px;
+    font-weight: 500;
+    color: #777879;
+    text-decoration: none;
+}
+
+.menu-link a:hover {
+    color: #fff;
+}
+
+.menu-link .active {
+    display: block;
+    width: 50%;
+    margin: 2px auto;
+    border-top: solid 2px #11f513;
+}
+
+
+/* Sezioni */
+.content section {
+    margin: 50px 0;
+}
+
+/* ALBUM */
+.album {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.album h3 {
+    margin-top: 10px;
+}
+
+.album .item {
+    flex: 1;
+    margin-top: 10px;
+    padding-right: 10px;
+    text-align: center;
+    min-width: 250px;
+    max-width: 290px;
+    width: 16%;
+}
+
+.album .item:hover .layover {
+    display: block;
+}
+
+.album .item .image {
+    position: relative;
+}
+
+.album .item .layover {
+    display: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,.68);
+}
+
+.album .item .layover i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+}
+
+.album .item .layover i:hover {
+    cursor: pointer;
+}
+
+.album .item img {
+    width: 100%;
+}
+
+.popular-artists .image img,
+.popular-artists .image .layover {
+    border-radius: 50%;
+}
+
+
+/* footer */
+footer {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    background-color: #1c1b1b;
+    z-index: 10;
+}
+
+footer .brano {
+    padding: 0 10px;
+    max-height: 90px;
+    max-width: 250px;
+    flex-grow: 1;
+    font-size: 12px;
+    font-weight: 500;
+    color: #fff;
+}
+
+footer .brano::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+footer .brano img {
+    float: left;
+    padding: 15px 0;
+    padding-right: 10px;
+    height: 80px;
+}
+
+footer .brano .info {
+    float: left;
+    margin-top: 25px;
+}
+
+footer .brano .info a {
+    text-decoration: none;
+    color: #777879;
+}
+
+footer .brano .info a:hover {
+    color: #fff;
+}
+
+footer .brano .like {
+    float: right;
+    width: 30%;
+    margin-top: 27px;
+    text-align: right;
+    font-size: 20px;
+    color: #777879;
+}
+
+footer .brano .like .far {
+    padding-left: 1%;
+}
+
+footer .brano .like .far:hover {
+    cursor: pointer;
+    color: #fff;
+}
+
+footer .player {
+    flex-grow: 2;
+    min-width: 155px;
+    color: #fff;
+    text-align: center;
+}
+
+footer .player .control .fas {
+    margin: 0 1%;
+}
+
+footer .player .control .fas:hover {
+    cursor: pointer;
+}
+
+footer .player .control .fa-play-circle {
+    margin: 0 15px;
+    font-size: 28px;
+    vertical-align: sub;
+}
+
+footer .player .control .fa-play-circle:hover {
+    cursor: pointer;
+    transform: scale(110%);
+}
+
+footer .player .time {
+    margin-top: 10px;
+    width: 100%;
+}
+
+footer .tools {
+    flex-grow: 1;
+    flex-basis: 33%;
+    max-width: 250px;
+    color: #fff;
+    text-align: center;
+}
+
+footer .tools .fas {
+    margin: 0 2%;
+}
+
+footer .tools .fas:hover {
+    cursor: pointer;
+}
+
+
+/* SLIDER */
+footer .slider {
+    display: inline-block;
+    width: 50%;
+}
+
+footer .slider .progress {
+    position: relative;
+    display: inline-block;
+    width: 30%;
+    height: 5px;
+    border-radius: 5px;
+    background-color: #fff;
+    vertical-align: middle;
+}
+
+footer .slider:hover .progress {
+    background-color: #acd917;
+}
+
+footer .slider .puntatore {
+    display: none;
+    position: absolute;
+    top: -5px;
+    right: 0;
+    margin: 0 -6px;
+    height: 15px;
+    width: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+footer .slider:hover .puntatore {
+    display: block;
+    cursor: pointer;
+}
+
+footer .slider .bar {
+    display: inline-block;
+    margin-left: -6px;
+    width: 65%;
+    height: 5px;
+    border-radius: 5px;
+    background-color: #777879;
+    vertical-align: middle;
+}
+/* /SLIDER */
+
+
+/* Media smartphone */
+@media all and (max-width: 790px) {
+
+    .menu-lat  {
+        width: 50px;
+        text-align: center;
+    }
+
+    .menu-lat #logo-big {
+        display: none;
+    }
+
+    .menu-lat #logo-small {
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+
+    .menu-lat span {
+        display: none;
+    }
+
+    .menu-lat a {
+        display: inline-block;
+        padding: 5px 0;
+        width: 100%;
+        text-decoration: none;
+        color: #adb3b3;
+    }
+
+    .menu-lat .playlist {
+        display: none;
+    }
+
+    .menu-lat .menu-bottom .download img {
+        margin-left: -3px;
+    }
+
+    .menu-lat .menu-bottom hr {
+        display: none;
+    }
+
+    .head-upgrade {
+        width: calc(100% - 50px);
+    }
+
+    .content {
+        height: 100%;
+        width: calc(100% - 50px);
+    }
+
+    footer .brano {
+        flex-grow: 0;
+    }
+
+    footer .brano .like {
+        width: 15%;
+        margin-top: 25px;
+        font-size: 15px;
+        float: left;
+    }
+}
+/*  */

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>html-css-spotifyweb</title>
+
+    <script id="album-template" type="text/x-handlebars-template">
+        <div class="item">
+            <div class="image">
+                <div class="layover"><i class="far fa-play-circle"></i></div>
+                <img src="{{ poster }}" alt="">
+            </div>
+            <h3>{{ title }}</h3>
+            <span class="author">{{ author }}</span>
+            <span class="year">{{ year }}</span>
+        </div>
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <!-- MAIN -->
+    <main>
+        <!-- Menu laterale -->
+        <div class="menu-lat">
+            <nav>
+                <ul>
+                    <li><a href="#"><img id="logo-big" src="img/logo.svg" alt="logo"></a></li>
+                    <li><a href="#"><img id="logo-small" src="img/logo-small.svg" alt="logo"></a></li>
+                    <li><a href="#"><img src="img/home.svg" alt="home"> <span>Home</span></a></li>
+                    <li><a href="#"><img src="img/search.svg" alt="cerca"> <span>Cerca</span></a></li>
+                    <li><a href="#"><img src="img/libreria.svg" alt="libreria"> <span>La tua libreria</span></a></li>
+                </ul>
+            </nav>
+
+            <section class="playlist">
+                PLAYLIST
+                <a href="#"><i class="fas fa-plus-square"></i> Crea Playlist</a>
+                <ul>
+                    <li><a href="#">Nuova Playlist</a></li>
+                    <li><a href="#">Nuova Playlist</a></li>
+                    <li><a href="#">Nuova Playlist</a></li>
+                    <li><a href="#">Nuova Playlist</a></li>
+                    <li><a href="#">Nuova Playlist</a></li>
+                    <li><a href="#">Nuova Playlist</a></li>
+                    <li><a href="#">Nuova Playlist</a></li>
+                    <li><a href="#">Nuova Playlist</a></li>
+                </ul>
+            </section>
+
+            <section class="menu-bottom">
+                <ul>
+                    <li class="download">
+                        <a href="#"><img src="img/download.svg" alt="download">
+                            <span>Installa app</span>
+                        </a>
+                    </li>
+
+                    <hr>
+
+                    <li class="user">
+                        <a href="#">
+                            <i class="fas fa-user-circle"></i>
+                            <span id="username-lat">John Doe</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+        </div>
+
+        <!-- Contenitore web app -->
+        <div class="content">
+            <!-- Header di upgrade -->
+            <div class="head-upgrade">
+                <a class="btn" href="#">EFFETTUA L'UPGRADE</a>
+            </div>
+
+            <!-- Navbar superiore -->
+            <nav class="menu-link">
+                <ul>
+                    <li><a href="#">IN EVIDENZA</a><i class="active"></i></li>
+                    <li><a href="#">PODCAST</a></li>
+                    <li><a href="#">CLASSIFICHE</a></li>
+                    <li><a href="#">GENERI E MOOD</a></li>
+                    <li><a href="#">NUOVE USCITE</a></li>
+                    <li><a href="#">SCOPRI</a></li>
+                </ul>
+            </nav>
+
+            <!-- Sezione recently-played -->
+            <section class="recently-played">
+                <h2>I tuoi album</h2>
+                <label for="select-genere">Filtra per genere: </label>
+                <select class="genere" id="select-genere">
+                    <option selected value="">-- Seleziona --</option>
+                    <option value="pop">Pop</option>
+                    <option value="rock">Rock</option>
+                    <option value="metal">Metal</option>
+                    <option value="jazz">Jazz</option>
+                </select>
+                <div id="albums" class="album"></div>
+            </section>
+
+            <!-- Sezione creato per -->
+            <section>
+                <h2>Creato per <span id="username">John Doe</span></h2>
+                <small>Più ascolti, più accurati saranno i tuoi suggerimenti</small>
+                <div class="album">
+
+                    <div class="item">
+                        <div class="image">
+                            <div class="layover"><i class="far fa-play-circle"></i></div>
+                            <img src="img/radar.jpeg" alt="radar">
+                        </div>
+                        <h3>Release Radar</h3>
+                    </div>
+
+                    <div class="item">
+                        <div class="image">
+                            <div class="layover"><i class="far fa-play-circle"></i></div>
+                            <img src="img/mixdaily.jpeg" alt="mix">
+                        </div>
+                        <h3>Daily Mix 1</h3>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sezione Artisti più popolari -->
+            <section class="popular-artists">
+                <h2>Artisti più popolari</h2>
+                <small>Più ascolti, più accurati saranno i tuoi suggerimenti</small>
+                <div class="album">
+
+                    <div class="item">
+                        <div class="image">
+                            <div class="layover"><i class="far fa-play-circle"></i></div>
+                            <img src="img/youg.jpeg" alt="radar">
+                        </div>
+                        <h3>Lana del Rey</h3>
+                    </div>
+
+                    <div class="item">
+                        <div class="image">
+                            <div class="layover"><i class="far fa-play-circle"></i></div>
+                            <img src="img/einaudi.jpeg" alt="mix">
+                        </div>
+                        <h3>Ludovico Einaudi</h3>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="brano">
+            <img src="img/sinister.jpeg" alt="sinister">
+            <div class="info">
+                <h4>Sinister</h4>
+                <a href="#">Brano</a>
+            </div>
+            <div class="like">
+                <i class="far fa-heart"></i>
+                <i class="far fa-folder"></i>
+            </div>
+        </div>
+
+        <div class="player">
+            <div class="control">
+                <i class="fas fa-random"></i>
+                <i class="fas fa-step-backward"></i>
+                <i class="far fa-play-circle"></i>
+                <i class="fas fa-step-forward"></i>
+                <i class="fas fa-redo-alt"></i>
+            </div>
+            <div class="time">
+                <span>0:25</span>
+                <div class="slider">
+                    <i class="progress">
+                        <i class="puntatore"></i>
+                    </i>
+                    <i class="bar"></i>
+                </div>
+                <span>4:35</span>
+            </div>
+        </div>
+
+        <div class="tools">
+            <i class="fas fa-list-ul"></i>
+            <i class="fas fa-desktop"></i>
+            <i class="fas fa-volume-up"></i>
+            <div class="slider">
+                <i class="progress">
+                    <i class="puntatore"></i>
+                </i>
+                <i class="bar"></i>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!-- SCRIPT -->
+
+<script type="text/javascript" src="js/script.js"></script>
+
+<!-- /SCRIPT -->
+</body>
+</html>
